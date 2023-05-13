@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Price Predictor</title>
+  <script src="carModelLoader.js" type="module"></script>
+  <script src="validation.js" type="module"></script>
+  <script type="module">
+    import { loadCarModels } from './carModelLoader.js';
+
+    // Call the function to load enum values when the page is loaded
+    document.addEventListener('DOMContentLoaded', loadCarModels);
+  </script>
+</head>
+<body>
+  <h2>Predict Car Prices - Enter the criteria</h2>
+  <form name="myForm" onsubmit="return validateForm()" method="post">
+    <label for="carModel">Car Model:</label>
+    <select id="carModel" name="carModel"></select><br><br>
+
+    <label for="vehicleAge">Age of the Vehicle:</label>
+    <input type="string" id="vehicleAge" name="VehicleAge"><br><br>
+
+    <label for="kmDriven">KM Driven:</label>
+    <input type="int" id="kmDriven" name="kmDriven"><br><br>
+
+    <label for="fuelType">Fuel Type:</label>
+    <select id="fuelType" name="fuel-type">
+      <option value="petrol">Petrol</option>
+      <option value="diesel">Diesel</option>
+      <option value="electric">Electric</option>
+      <option value="hybrid">Hybrid</option>
+    </select><br><br>
+
+    <label for="transmissionTYpe">Transmission Type:</label>
+    <input type="text" id="transmissionType" name="transmissionType"><br><br>
+
+    <label for="mileage">Mileage:</label>
+    <input type="float" id="Mileage" name="Mileage"><br><br>
+
+     <label for="enginePower">Engine Power:</label>
+    <input type="float" id="enginePower" name="enginePower"><br><br>
+
+    <label for="seats">No of seats:</label>
+    <input type="int" id="seats" name="seats"><br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
